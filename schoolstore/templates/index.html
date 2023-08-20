@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://kit.fontawesome.com/6f5d0218e0.js" crossorigin="anonymous"></script>
+    <meta name="description" content="{% block metadescription %}{% endblock %}">
+    <title>{% block title %}{% endblock %}</title>
+    <title>School Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+
+ /* Add your CSS styles here */
+        nav {
+            background-color: Black;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            float: left;
+            position: relative; /* Add this line for positioning dropdown */
+        }
+
+        nav li a {
+            display: block;
+            color: White;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
+        }
+
+
+        body {background-color: silver;
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="credentials/login">Login</a></li>
+            <li><a href="credentials/register">Register</a></li>
+            <li><a href="credentials/logout">Logout</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Department</a>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Bio_Science">Bio Science</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Home_Science">Home Science</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Humanities">Humanities</a>
+                    <!-- Add more department links here -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <button id="loginButton">Login</button>
+    <script>
+        // Add a click event listener to the login button
+        document.getElementById("loginButton").addEventListener("click", function() {
+            // Redirect to the login page when the button is clicked
+            window.location.href = "credentials/login"; // Update with the correct URL
+        });
+    </script>
+
+
+    <!-- Add your content here -->
+
+    <!-- Add your JavaScript to handle button click and other interactions -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
+

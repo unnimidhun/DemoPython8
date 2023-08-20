@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Page</title>
+    <style>
+
+        body {background-color: silver;
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the New Page!</h1>
+    <button id="showRegistrationForm">Show Registration Form</button>
+    <script>
+        document.getElementById("showRegistrationForm").addEventListener("click", function() {
+            window.location.href = "{% url 'registration_form' %}";
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form</title>
+    <style>
+
+        body {background-color: silver;
+
+    </style>
+</head>
+<body>
+    <h1>User Information Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" id="dob" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="phone" id="phone" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br><br>
+
+        <label for="address">Address:</label>
+        <textarea name="address" id="address" rows="4" cols="50" required></textarea><br><br>
+
+
+<label for="department">Department:</label>
+<select id="department" name="department">
+    <option value="Computer_science">Computer_science</option>
+    <option value="Commerce">Commerce</option>
+    <option value="Bio_Science">Bio_Science</option>
+    <option value="Home_Science">Home_Science</option>
+    <option value="Humanities">Humanities</option>
+</select><br>
+
+<label for="course">Course:</label>
+<select id="course" name="course">
+    <option value="" selected="selected">Select a course</option>
+</select><br>
+        <label for="purpose">Purpose:</label>
+     <select id="purpose" name="purpose" required>
+    <option value="" selected="selected">Select a purpose</option>
+    <option value="enquiry">Enquiry</option>
+    <option value="place_order">Place Order</option>
+    <option value="return">Return</option>
+    <!-- Add more options for different purposes -->
+</select><br><br>
+
+        <label>Materials Provided:</label><br>
+        <input type="checkbox" name="materials" value="debit_notebook">Debit Notebook<br>
+        <input type="checkbox" name="materials" value="pen">Pen<br>
+        <input type="checkbox" name="materials" value="exam_papers">Exam Papers<br>
+        <!-- Add more checkboxes as needed -->
+        <br><br>
+
+  <input type="submit" value="Submit">
+    </form>
+
+    <div id="confirmation_message" style="display: none;">
+        Order Confirmed! <br>
+        <a href='/'>Return to Home Page</a>
+
+    </div>
+
+    <form action='/' method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("confirmation_message").style.display = "block";
+        });
+    </script>
+
+
+</body>
+</html>
+
+
